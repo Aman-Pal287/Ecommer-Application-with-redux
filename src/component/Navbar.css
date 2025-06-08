@@ -1,0 +1,46 @@
+.navbar-main {
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 500;
+  padding-top: 1vw;
+  padding-right: 1vw;
+  padding-left: 1vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-menu {
+  font-family: helvetica;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5vw;
+  padding-left: 2vw;
+  height: 100%;
+}
+.navbar-menu-link {
+  font-size: 0.8vw;
+  opacity: 0.78;
+  text-transform: uppercase;
+  margin-top: -50px;
+}
+
+.navbar-logo-svg {
+  display: flex;
+  height: 160px;
+  flex-direction: column;
+  gap: 12vh;
+  /* background-color: red; */
+  /* overflow: hidden; */
+}
+
+.navbar-logo-svg2 {
+  padding-left: 1vw;
+  display: block !important ;
+  scale: 0;
+
+  /* background-color: red; */
+}

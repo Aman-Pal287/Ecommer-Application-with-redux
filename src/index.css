@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: aeonik-regular;
+  src: url(./fonts/AeonikTRIAL-Regular.otf);
+}
+@font-face {
+  font-family: aeonik-light;
+  src: url(./fonts/AeonikTRIAL-Light.otf);
+  src: url(./fonts/AeonikTRIAL-Regular.otf);
+}
+@font-face {
+  font-family: aeonik-bold;
+  src: url(./fonts/AeonikTRIAL-Bold.otf);
+}
+@font-face {
+  font-family: helvetica;
+  src: url(./fonts/HelveticaNowText-Regular.otf);
+}
+@font-face {
+  font-family: futura;
+  src: url(./fonts/Futura-Bold.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
