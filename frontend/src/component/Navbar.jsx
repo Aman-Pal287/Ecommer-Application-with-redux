@@ -149,14 +149,14 @@ const Navbar = () => {
         <NavLink to="/about" className="navbar-menu-link">
           About
         </NavLink>
-        <NavLink to="/settings" className="navbar-menu-link">
-          Settings
+        <NavLink to="/products" className="navbar-menu-link">
+          Products
         </NavLink>
         <NavLink to="/contact" className="navbar-menu-link">
           Contact
         </NavLink>
-        <NavLink to="/user" className="navbar-menu-link">
-          Account
+        <NavLink to="/login" className="navbar-menu-link">
+          Login
         </NavLink>
 
         <NavLink className="navbar-menu-link">

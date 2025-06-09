@@ -58,22 +58,29 @@ const Home = () => {
     }
     loadingAnimation();
 
-    document.addEventListener("mousemove", (e) => {
-      gsap.to("#cursor", {
-        left: e.x,
-        top: e.y,
+    function page5AnimationCur() {
+      document.addEventListener("mousemove", (e) => {
+        gsap.to("#cursor", {
+          left: e.x,
+          top: e.y,
+        });
       });
-    });
-    document.querySelector(".app-page-5").addEventListener("mouseenter", () => {
-      gsap.to("#cursor", {
-        scale: 1,
-      });
-    });
-    document.querySelector(".app-page-5").addEventListener("mouseleave", () => {
-      gsap.to("#cursor", {
-        scale: 0,
-      });
-    });
+      document
+        .querySelector(".app-page-5")
+        .addEventListener("mouseenter", () => {
+          gsap.to("#cursor", {
+            scale: 1,
+          });
+        });
+      document
+        .querySelector(".app-page-5")
+        .addEventListener("mouseleave", () => {
+          gsap.to("#cursor", {
+            scale: 0,
+          });
+        });
+    }
+    page5AnimationCur();
   });
 
   return (
