@@ -1,18 +1,11 @@
 {
   "users": [
     {
-      "id": "DaJgouAqjjmZCVfEhcIUk",
-      "username": "admin-master",
-      "email": "master@master.com",
-      "password": "123456",
-      "isAdmin": true
-    },
-    {
-      "id": "okf0fCVKMTgp4XFByt8Q6",
+      "id": "eIBgx1i1X2U7Ds-Cav3vq",
       "username": "admin",
-      "email": "palaman9377@gmail.com",
-      "password": "admin123",
-      "isAdmin": false
+      "email": "admin@123.com",
+      "password": "1234",
+      "isAdmin": true
     }
   ],
   "products": [
@@ -27,6 +20,13 @@
         "rate": 3.9,
         "count": 120
       }
+    },
+    {
+      "id": "yYUon7wMewEgvxmwdp6Jd",
+      "title": "shoe",
+      "image": "https://cdn.dummyjson.com/recipe-images/1.webp",
+      "description": "mera joota hai japani",
+      "price": "150"
     }
   ],
   "carts": []

@@ -6,42 +6,45 @@ import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
 gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  useGSAP(() => {
-    // window.scrollTo(0, 0); // ✅ Scroll to top forcefully on refresh
-    window.addEventListener("scroll", () => {
-      const scrollX = window.scrollX;
-      const scrollY = window.scrollY;
+  // useGSAP(() => {
+  //   // window.scrollTo(0, 0); // ✅ Scroll to top forcefully on refresh
+  //   window.addEventListener("scroll", () => {
+  //     const scrollX = window.scrollX;
+  //     const scrollY = window.scrollY;
 
-      if (scrollY > 150) {
-        gsap.to(".navbar-logo-svg2", {
-          scale: 1,
-          duration: 0,
-        });
+  //     if (scrollY > 150) {
+  //       gsap.to(".navbar-logo-svg2", {
+  //         scale: 1,
+  //         duration: 0,
+  //       });
 
-        gsap.to(".navbar-main", {
-          transform: "translatey(-100%)",
-        });
-      } else if (scrollY < 150) {
-        gsap.to(".navbar-logo-svg ", {
-          transform: "translatey(0)",
-          scale: 1,
-        });
-        gsap.to(".navbar-logo-svg2", {
-          scale: 0,
-        });
+  //       gsap.to(".navbar-main", {
+  //         transform: "translatey(-100%)",
+  //       });
+  //     } else if (scrollY < 150) {
+  //       gsap.to(".navbar-logo-svg ", {
+  //         transform: "translatey(0)",
+  //         scale: 1,
+  //       });
+  //       gsap.to(".navbar-logo-svg2", {
+  //         scale: 0,
+  //       });
 
-        gsap.to(".navbar-main", {
-          transform: "translatey(0)",
-        });
-      }
-    });
-  });
+  //       gsap.to(".navbar-main", {
+  //         transform: "translatey(0)",
+  //       });
+  //     }
+  //   });
+  // });
+
+  const user = useSelector((state) => state.userReducer.users);
 
   return (
     <nav className="navbar-main flex justify-between ">
@@ -142,22 +145,25 @@ const Navbar = () => {
           </svg>
         </div>
       </div>
+
       <div className="navbar-menu ">
         <NavLink to="/" className="navbar-menu-link">
           Home
         </NavLink>
-        <NavLink to="/about" className="navbar-menu-link">
-          About
-        </NavLink>
+
         <NavLink to="/products" className="navbar-menu-link">
           Products
         </NavLink>
-        <NavLink to="/contact" className="navbar-menu-link">
-          Contact
-        </NavLink>
-        <NavLink to="/login" className="navbar-menu-link">
-          Login
-        </NavLink>
+
+        {user ? (
+          <NavLink to="/admin/create-product" className="navbar-menu-link">
+            Create Product
+          </NavLink>
+        ) : (
+          <NavLink to="/login" className="navbar-menu-link">
+            Login
+          </NavLink>
+        )}
 
         <NavLink className="navbar-menu-link">
           <IoReorderTwoOutline className="text-[2vw] opacity-50 scale-x-160 " />

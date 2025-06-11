@@ -5,83 +5,83 @@ import "../pages/Home.css";
 import { useEffect } from "react";
 
 const Home = () => {
-  useGSAP(() => {
-    window.scrollTo(0, 0); // ✅ Scroll to top forcefully on refresh
-    function videoncomAnimation() {
-      let videocon = document.querySelector(".app-video-container");
-      let playbtn = document.querySelector(".app-video-container-play");
-      videocon.addEventListener("mouseenter", () => {
-        gsap.to(playbtn, {
-          scale: 1,
-          opacity: 1,
-        });
-      });
-      videocon.addEventListener("mouseleave", () => {
-        gsap.to(playbtn, {
-          scale: 0,
-          opacity: 0,
-        });
-      });
+  // useGSAP(() => {
+  //   window.scrollTo(0, 0); // ✅ Scroll to top forcefully on refresh
+  //   function videoncomAnimation() {
+  //     let videocon = document.querySelector(".app-video-container");
+  //     let playbtn = document.querySelector(".app-video-container-play");
+  //     videocon.addEventListener("mouseenter", () => {
+  //       gsap.to(playbtn, {
+  //         scale: 1,
+  //         opacity: 1,
+  //       });
+  //     });
+  //     videocon.addEventListener("mouseleave", () => {
+  //       gsap.to(playbtn, {
+  //         scale: 0,
+  //         opacity: 0,
+  //       });
+  //     });
 
-      // gsap.to(playbtn, { xPercent: -50, yPercent: -50 });
+  //     // gsap.to(playbtn, { xPercent: -50, yPercent: -50 });
 
-      let xTo = gsap.quickTo(playbtn, "x", {
-          duration: 0.6,
-          ease: "power3",
-        }),
-        yTo = gsap.quickTo(playbtn, "y", {
-          duration: 0.6,
-          ease: "power3",
-        });
+  //     let xTo = gsap.quickTo(playbtn, "x", {
+  //         duration: 0.6,
+  //         ease: "power3",
+  //       }),
+  //       yTo = gsap.quickTo(playbtn, "y", {
+  //         duration: 0.6,
+  //         ease: "power3",
+  //       });
 
-      window.addEventListener("mousemove", (e) => {
-        xTo(e.clientX - 50);
-        yTo(e.clientY - 50);
-      });
-    }
-    videoncomAnimation();
+  //     window.addEventListener("mousemove", (e) => {
+  //       xTo(e.clientX - 50);
+  //       yTo(e.clientY - 50);
+  //     });
+  //   }
+  //   videoncomAnimation();
 
-    function loadingAnimation() {
-      gsap.from(".app-page1 h1", {
-        y: 200,
-        opacity: 0,
-        delay: 0.5,
-        duration: 0.8,
-        stagger: 0.2,
-      });
+  //   function loadingAnimation() {
+  //     gsap.from(".app-page1 h1", {
+  //       y: 200,
+  //       opacity: 0,
+  //       delay: 0.5,
+  //       duration: 0.8,
+  //       stagger: 0.2,
+  //     });
 
-      gsap.from(".app-video-container", {
-        opacity: 0,
-        delay: 0.9,
-        duration: 0.8,
-      });
-    }
-    loadingAnimation();
+  //     gsap.from(".app-video-container", {
+  //       opacity: 0,
+  //       delay: 0.9,
+  //       duration: 0.8,
+  //     });
+  //   }
+  //   loadingAnimation();
 
-    function page5AnimationCur() {
-      document.addEventListener("mousemove", (e) => {
-        gsap.to("#cursor", {
-          left: e.x,
-          top: e.y,
-        });
-      });
-      document
-        .querySelector(".app-page-5")
-        .addEventListener("mouseenter", () => {
-          gsap.to("#cursor", {
-            scale: 1,
-          });
-        });
-      document
-        .querySelector(".app-page-5")
-        .addEventListener("mouseleave", () => {
-          gsap.to("#cursor", {
-            scale: 0,
-          });
-        });
-    }
-    page5AnimationCur();
-  });
+  //   function page5AnimationCur() {
+  //     document.addEventListener("mousemove", (e) => {
+  //       gsap.to("#cursor", {
+  //         left: e.x,
+  //         top: e.y,
+  //       });
+  //     });
+  //     document
+  //       .querySelector(".app-page-5")
+  //       .addEventListener("mouseenter", () => {
+  //         gsap.to("#cursor", {
+  //           scale: 1,
+  //         });
+  //       });
+  //     document
+  //       .querySelector(".app-page-5")
+  //       .addEventListener("mouseleave", () => {
+  //         gsap.to("#cursor", {
+  //           scale: 0,
+  //         });
+  //       });
+  //   }
+  //   page5AnimationCur();
+  // });
 
   return (
     <>
